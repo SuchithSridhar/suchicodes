@@ -3,6 +3,7 @@ package configs
 import (
 	"log/slog"
 	"os"
+	"strconv"
 )
 
 type GlobalConfig struct {
@@ -10,9 +11,11 @@ type GlobalConfig struct {
 	SECRET_KEY     []byte
 	DATABASE_URI   string
 	ROOT_DIRECTORY string
+	LISTEN_PORT int
 }
 
 const development = "development"
+const production = "production"
 
 var secret_key = "secret"
 
@@ -21,11 +24,10 @@ var Config = GlobalConfig{
 	SECRET_KEY:     nil,
 	DATABASE_URI:   "",
 	ROOT_DIRECTORY: "",
+	LISTEN_PORT: 3000,
 }
 
 func InitConfig() {
-	// Set the different config variables based on environment variables
-
 	var value string
 	var ok bool
 
@@ -61,5 +63,18 @@ func InitConfig() {
 		os.Exit(1)
 	} else {
 		Config.SECRET_KEY = []byte(secret_key)
+	}
+
+	if Config.ENVIRONMENT == production {
+		if value, ok = os.LookupEnv("LISTEN_PORT"); ok {
+			if intvalue, err := strconv.ParseInt(value, 10, 64); err != nil {
+				if (!ok || intvalue < 20 || intvalue > 60000) {
+					slog.Error("A valid port not set for production environment.")
+					os.Exit(1)
+				}
+			} else {
+				Config.LISTEN_PORT = int(intvalue)
+			}
+		}
 	}
 }
