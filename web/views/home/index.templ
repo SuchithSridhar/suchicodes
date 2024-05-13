@@ -1,6 +1,10 @@
 package home
 
-templ Index() {
+import (
+    cmpts "github.com/suchithsridhar/suchicodes/web/components"
+)
+
+templ IndexShow(data *IndexJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts.FooterJSON) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -9,7 +13,9 @@ templ Index() {
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		</head>
 		<body>
+			@cmpts.NavbarShow(navbarData)
 			<h1>Hello, World!</h1>
+			@cmpts.FooterShow(footerData)
 		</body>
 	</html>
 }

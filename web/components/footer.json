@@ -1,0 +1,57 @@
+{
+    "title": "Suchicodes",
+    "subtitle": "© Copyright 2024 Suchith Sridhar.\nAll rights reserved.",
+
+    "main_section": "Main",
+
+    "main_link_1_title": "Home",
+    "main_link_1_url": "/",
+
+    "main_link_2_title": "Projects",
+    "main_link_2_url": "/projects",
+
+    "main_link_3_title": "Contact",
+    "main_link_3_url": "/contact",
+
+    "main_link_4_title": "About",
+    "main_link_4_url": "/about",
+
+    "main_link_5_title": "Notes",
+    "main_link_5_url": "/notes",
+
+    "professional_section": "Professional",
+
+    "professional_link_1_title": "Work Experience",
+    "professional_link_1_url": "/#work-experience",
+
+    "professional_link_2_title": "About",
+    "professional_link_2_url": "/about",
+
+    "professional_link_3_title": "Projects",
+    "professional_link_3_url": "/projects",
+
+    "academic_section": "Academic",
+
+    "academic_link_1_title": "Lecture Notes",
+    "academic_link_1_url": "/notes/category/dalhousie",
+
+    "academic_link_2_title": "General Notes",
+    "academic_link_2_url": "/notes",
+
+    "academic_link_3_title": "Research Projects",
+    "academic_link_3_url": "/projects",
+
+    "academic_link_4_title": "Projects",
+    "academic_link_4_url": "/projects",
+
+    "developers_section": "Developers",
+
+    "developers_link_1_title": "API Info",
+    "developers_link_1_url": "/api",
+
+    "developers_link_2_title": "Admin Page",
+    "developers_link_2_url": "/users",
+
+    "developers_link_3_title": "Contribute",
+    "developers_link_3_url": "/contribute"
+}

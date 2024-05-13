@@ -1,4 +1,4 @@
-VIEWS_DIR = ./web/views/
+VIEWS_DIR = ./web/
 NOTIFICATION_TITLE = "Suchicodes Makefile"
 
 run: gen
