@@ -1,0 +1,12 @@
+{
+    "title": "Suchicodes",
+
+    "landing_title": "Hello! I'm Suchith Sridhar",
+    "landing_about": "Some about information for the page",
+
+    "landing_btn1": "Contact Me",
+    "landing_btn1_url": "/contact",
+
+    "landing_btn2": "Resume",
+    "landing_btn2_url": "/resume"
+}

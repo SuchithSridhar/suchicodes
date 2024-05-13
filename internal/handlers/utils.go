@@ -2,6 +2,8 @@ package handlers
 
 import (
 	"context"
+	"encoding/json"
+	"os"
 
 	cookie "github.com/suchithsridhar/suchicodes/pkg/cookie_manager"
 
@@ -23,4 +25,19 @@ func renderTemplate(c echo.Context, component templ.Component) error {
 	)
 
 	return component.Render(ctx, c.Response())
+}
+
+func loadJSONFromFile[T any](filename string) (*T, error) {
+	var data T
+
+	fileContent, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	if err := json.Unmarshal(fileContent, &data); err != nil {
+		return nil, err
+	}
+
+	return &data, nil
 }
