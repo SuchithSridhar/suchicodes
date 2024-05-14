@@ -5,8 +5,12 @@ const IndexJsonFile = "./web/views/home/index.json"
 type IndexJSON struct {
 	Title   string `json:"title"`
 	Landing struct {
-		Title   string `json:"title"`
-		About   string `json:"about"`
+		Title string `json:"title"`
+		About string `json:"about"`
+		Image struct {
+			Src string `json:"src"`
+			Alt string `json:"alt"`
+		}
 		Buttons []struct {
 			Text string `json:"text"`
 			URL  string `json:"url"`

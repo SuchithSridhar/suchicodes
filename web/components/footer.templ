@@ -9,7 +9,7 @@ templ FooterShow(data *FooterJSON) {
 		<div class="links">
 			for _, section := range data.Sections {
 				<div class="link_section">
-					<h6>{ section.SectionTitle }</h6>
+					<h5>{ section.SectionTitle }</h5>
 					<ul>
 						for _, link := range section.Links {
 							<a href={ templ.URL(link.URL) }>

@@ -14,7 +14,44 @@ templ IndexShow(data *IndexJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts
 		</head>
 		<body>
 			@cmpts.NavbarShow(navbarData)
-			<h1>Hello, World!</h1>
+			<section id="landing">
+				<h1>{ data.Landing.Title }</h1>
+				<p>{ data.Landing.About }</p>
+				<div class="btns">
+					for _, btn := range data.Landing.Buttons {
+						<a href={ templ.URL(btn.URL) } class="btn">{ btn.Text }</a>
+					}
+				</div>
+				<div class="image-section">
+					<img src={ string(templ.URL(data.Landing.Image.Src)) } alt={ data.Landing.Image.Alt }/>
+				</div>
+			</section>
+			<section id="visit">
+				<h2>{ data.VisitSection.Title }</h2>
+				for _, topic := range data.VisitSection.Topics {
+					<h4>{ topic.Title }</h4>
+					<p class="subtitle">{ topic.Subtitle }</p>
+					for _, btn := range topic.Buttons {
+						<a href={ templ.URL(btn.URL) } class="btn">{ btn.Text }</a>
+					}
+				}
+			</section>
+			<section id="about">
+				<h2>{ data.AboutSection.Title }</h2>
+				<p>{ data.AboutSection.Content }</p>
+			</section>
+			<section id="work-experience">
+				<h2>{ data.WorkSection.Title }</h2>
+				<div class="experiences-list">
+					for _, exp := range data.WorkSection.Experiences {
+						<div class="experience">
+							<h4>{ exp.Position } &#64; { exp.Location }</h4>
+							<div class="time">{ exp.Start } - { exp.End }</div>
+							<p>{ exp.Description }</p>
+						</div>
+					}
+				</div>
+			</section>
 			@cmpts.FooterShow(footerData)
 		</body>
 	</html>

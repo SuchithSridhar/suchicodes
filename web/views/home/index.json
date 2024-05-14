@@ -3,6 +3,10 @@
   "landing": {
     "title": "Hello! I'm Suchith",
     "about": "Welcome! I'm an enthusiastic developer and computer science student passionate about machine learning, low-level programming, and open-source software. As a research assistant, I'm committed to pushing the boundaries of technology.",
+    "image": {
+      "alt": "Suchith Profile Picture",
+      "src": "/assets/suchi-profile.png"
+    },
     "buttons": [
       {
         "text": "Contact Me",

@@ -12,6 +12,9 @@ type GlobalConfig struct {
 	DATABASE_URI   string
 	ROOT_DIRECTORY string
 	LISTEN_PORT    int
+	ASSETS_DIR     string
+	STYLES_DIR     string
+	JAVASCRIPT_DIR string
 }
 
 const development = "development"
@@ -25,6 +28,9 @@ var Config = GlobalConfig{
 	DATABASE_URI:   "",
 	ROOT_DIRECTORY: "",
 	LISTEN_PORT:    3000,
+	ASSETS_DIR:     "./web/static/assets",
+	STYLES_DIR:     "./web/static/css",
+	JAVASCRIPT_DIR: "./web/static/js",
 }
 
 func InitConfig() {
