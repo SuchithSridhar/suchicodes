@@ -12,7 +12,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-
 func renderTemplate(c echo.Context, component templ.Component) error {
 	ctxWithUser := context.WithValue(
 		c.Request().Context(),

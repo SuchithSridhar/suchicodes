@@ -1,23 +1,16 @@
 package components
 
 templ NavbarShow(data *NavbarJSON) {
-    <navbar>
-        <div class="brand">{data.Brand}</div>
-        <div class="links">
-            <ul>
-                <a href="{data.Link1URL}">
-                    <li>{data.Link1}</li>
-                </a>
-                <a href="{data.Link2URL}">
-                    <li>{data.Link2}</li>
-                </a>
-                <a href="{data.Link3URL}">
-                    <li>{data.Link3}</li>
-                </a>
-                <a href="{data.Link4URL}">
-                    <li>{data.Link4}</li>
-                </a>
-            </ul>
-        </div>
-    </navbar>
+	<navbar>
+		<div class="brand">{ data.Brand }</div>
+		<div class="links">
+			<ul>
+				for _, link := range data.Links {
+					<a href={ templ.URL(link.URL) }>
+						<li>{ link.Title }</li>
+					</a>
+				}
+			</ul>
+		</div>
+	</navbar>
 }

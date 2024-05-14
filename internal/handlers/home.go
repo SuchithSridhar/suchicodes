@@ -2,8 +2,8 @@ package handlers
 
 import (
 	echo "github.com/labstack/echo/v4"
-	home "github.com/suchithsridhar/suchicodes/web/views/home"
 	cmpts "github.com/suchithsridhar/suchicodes/web/components"
+	home "github.com/suchithsridhar/suchicodes/web/views/home"
 )
 
 func handleIndexShow(ctx echo.Context) error {
@@ -29,4 +29,3 @@ func handleIndexApi(ctx echo.Context) error {
 	status, data := serverJSONAsApi[home.IndexJSON](home.IndexJsonFile)
 	return ctx.JSON(status, data)
 }
-

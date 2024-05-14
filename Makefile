@@ -12,6 +12,7 @@ fmt:
 	# format all Go source files
 	@find . -name '*.go' -exec gofmt -s -w {} \+
 	@templ fmt $(VIEWS_DIR)
+	@find . -iname "*.json" -exec bash -c "jq . {} | sponge {} " \;
 	@notify-send -t 5000 -u normal -a $(NOTIFICATION_TITLE) "Formatted Go and Templ files" 
 
 kill:

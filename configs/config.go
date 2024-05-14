@@ -11,7 +11,7 @@ type GlobalConfig struct {
 	SECRET_KEY     []byte
 	DATABASE_URI   string
 	ROOT_DIRECTORY string
-	LISTEN_PORT int
+	LISTEN_PORT    int
 }
 
 const development = "development"
@@ -24,7 +24,7 @@ var Config = GlobalConfig{
 	SECRET_KEY:     nil,
 	DATABASE_URI:   "",
 	ROOT_DIRECTORY: "",
-	LISTEN_PORT: 3000,
+	LISTEN_PORT:    3000,
 }
 
 func InitConfig() {
@@ -68,7 +68,7 @@ func InitConfig() {
 	if Config.ENVIRONMENT == production {
 		if value, ok = os.LookupEnv("LISTEN_PORT"); ok {
 			if intvalue, err := strconv.ParseInt(value, 10, 64); err != nil {
-				if (!ok || intvalue < 20 || intvalue > 60000) {
+				if !ok || intvalue < 20 || intvalue > 60000 {
 					slog.Error("A valid port not set for production environment.")
 					os.Exit(1)
 				}

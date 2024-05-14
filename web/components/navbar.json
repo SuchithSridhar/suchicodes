@@ -1,11 +1,21 @@
 {
-    "brand": "Suchicodes",
-    "link_1": "Projects",
-    "link_1_url": "/projects",
-    "link_2": "Contact",
-    "link_2_url": "/contact",
-    "link_3": "About",
-    "link_3_url": "/about",
-    "link_4": "Notes",
-    "link_4_url": "/notes"
+  "brand": "Suchicodes",
+  "links": [
+    {
+      "title": "Projects",
+      "url": "/projects"
+    },
+    {
+      "title": "Contact",
+      "url": "/contact"
+    },
+    {
+      "title": "About",
+      "url": "/about"
+    },
+    {
+      "title": "Notes",
+      "url": "/notes"
+    }
+  ]
 }

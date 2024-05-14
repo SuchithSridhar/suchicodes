@@ -1,76 +1,109 @@
 {
-    "title": "Suchicodes",
-
-    "landing_title": "Hello! I'm Suchith",
-    "landing_about": "Welcome! I'm an enthusiastic developer and computer science student passionate about machine learning, low-level programming, and open-source software. As a research assistant, I'm committed to pushing the boundaries of technology.",
-
-    "landing_btn1": "Contact Me",
-    "landing_btn1_url": "/contact",
-
-    "landing_btn2": "Resume",
-    "landing_btn2_url": "/resume",
-
-    "visit_section_title": "Why Visit Suchicodes?",
-
-    "topic_1_title": "Professional Insights",
-    "topic_1_subtitle": "Learn about my work, projects, and interests!",
-
-    "topic_1_btn_1": "Work Experience",
-    "topic_1_btn_1_url": "/#work-experience",
-
-    "topic_1_btn_2": "Projects",
-    "topic_1_btn_2_url": "/projects",
-
-    "topic_1_btn_3": "Resume",
-    "topic_1_btn_3_url": "/resume",
-
-    "topic_2_title": "Academic Pursuits",
-    "topic_2_subtitle": "My work from university and notes from classes.",
-
-    "topic_2_btn_1": "Lecture Notes",
-    "topic_2_btn_1_url": "/notes/category/dalhousie",
-
-    "topic_2_btn_2": "Research Projects",
-    "topic_2_btn_2_url": "/projects",
-
-    "topic_3_title": "General Exploration",
-    "topic_3_subtitle": "My notes, projects, and a little about me.",
-
-    "topic_3_btn_1": "About Me",
-    "topic_3_btn_1_url": "/about",
-
-    "topic_3_btn_2": "Notes",
-    "topic_3_btn_2_url": "/notes",
-
-    "topic_3_btn_3": "Contact",
-    "topic_3_btn_3_url": "/contact",
-
-    "about_section_title": "A Little About Me",
-    "about_section_content": "I'm a Developer - I enjoy building stuff on the web and otherwise :). I am currently pursuing my undergraduate degree in computer science at the Dalhousie University, Canada.\n\nI'm a Full-Stack programmer who also specializes in GUI and CLI (Command-line interface) based application programming for Windows and Linux. I am passionate about computers and servers and intrigued about operating systems and their workings.",
-
-    "work_section_title": "Work Experience",
-
-    "work_1_position": "Research Assistant",
-    "work_1_location": "Dalhousie",
-    "work_1_start": "May 2024",
-    "work_1_end": "Present",
-    "work_1_desc": "Working with Professor Qiang Ye on building training machine learning models to improve intrusion detection systems (IDS).",
-
-    "work_2_position": "Freelance Developer",
-    "work_2_location": "Isla Technologies",
-    "work_2_start": "August 2024",
-    "work_2_end": "October 2024",
-    "work_2_desc": "Worked as a freelance web developer to build a tailored software solution to meet company specific needs. Customized the website UI to enhance investment appeal. Configured a web server to handle requests.\n\nPerform as the system administrator for the company.",
-
-    "work_3_position": "Freelance Developer",
-    "work_3_location": "FLAC",
-    "work_3_start": "March 2022",
-    "work_3_end": "July 2022",
-    "work_3_desc": "Worked as a freelance web developer for the Fredericton Legal Advice Clinic (FLAC). Designed and built a web system to handle appointment bookings. Engineered admin pages to allow easy management of appointments.\n\nPerform as the system administrator for the company.",
-
-    "work_4_position": "Associate Software Engineer",
-    "work_4_location": "Introhive",
-    "work_4_start": "September 2021",
-    "work_4_end": "April 2022",
-    "work_4_desc": "Completed two co-op work terms (internships) at Introhive as an associate software engineer performing the role of a full stack developer. Engineered solutions to existing stories, fixed multiple gating and top priority bugs and performed rigorous testing of the application."
+  "title": "Suchicodes",
+  "landing": {
+    "title": "Hello! I'm Suchith",
+    "about": "Welcome! I'm an enthusiastic developer and computer science student passionate about machine learning, low-level programming, and open-source software. As a research assistant, I'm committed to pushing the boundaries of technology.",
+    "buttons": [
+      {
+        "text": "Contact Me",
+        "url": "/contact"
+      },
+      {
+        "text": "Resume",
+        "url": "/resume"
+      }
+    ]
+  },
+  "visit_section": {
+    "title": "Why Visit Suchicodes?",
+    "topics": [
+      {
+        "title": "Professional Insights",
+        "subtitle": "Learn about my work, projects, and interests!",
+        "buttons": [
+          {
+            "text": "Work Experience",
+            "url": "/#work-experience"
+          },
+          {
+            "text": "Projects",
+            "url": "/projects"
+          },
+          {
+            "text": "Resume",
+            "url": "/resume"
+          }
+        ]
+      },
+      {
+        "title": "Academic Pursuits",
+        "subtitle": "My work from university and notes from classes.",
+        "buttons": [
+          {
+            "text": "Lecture Notes",
+            "url": "/notes/category/dalhousie"
+          },
+          {
+            "text": "Research Projects",
+            "url": "/projects"
+          }
+        ]
+      },
+      {
+        "title": "General Exploration",
+        "subtitle": "My notes, projects, and a little about me.",
+        "buttons": [
+          {
+            "text": "About Me",
+            "url": "/about"
+          },
+          {
+            "text": "Notes",
+            "url": "/notes"
+          },
+          {
+            "text": "Contact",
+            "url": "/contact"
+          }
+        ]
+      }
+    ]
+  },
+  "about_section": {
+    "title": "A Little About Me",
+    "content": "I'm a Developer - I enjoy building stuff on the web and otherwise :). I am currently pursuing my undergraduate degree in computer science at the Dalhousie University, Canada.\n\nI'm a Full-Stack programmer who also specializes in GUI and CLI (Command-line interface) based application programming for Windows and Linux. I am passionate about computers and servers and intrigued about operating systems and their workings."
+  },
+  "work_section": {
+    "title": "Work Experience",
+    "experiences": [
+      {
+        "position": "Research Assistant",
+        "location": "Dalhousie",
+        "start": "May 2024",
+        "end": "Present",
+        "description": "Working with Professor Qiang Ye on building training machine learning models to improve intrusion detection systems (IDS)."
+      },
+      {
+        "position": "Freelance Developer",
+        "location": "Isla Technologies",
+        "start": "August 2024",
+        "end": "October 2024",
+        "description": "Worked as a freelance web developer to build a tailored software solution to meet company specific needs. Customized the website UI to enhance investment appeal. Configured a web server to handle requests.\n\nPerform as the system administrator for the company."
+      },
+      {
+        "position": "Freelance Developer",
+        "location": "FLAC",
+        "start": "March 2022",
+        "end": "July 2022",
+        "description": "Worked as a freelance web developer for the Fredericton Legal Advice Clinic (FLAC). Designed and built a web system to handle appointment bookings. Engineered admin pages to allow easy management of appointments.\n\nPerform as the system administrator for the company."
+      },
+      {
+        "position": "Associate Software Engineer",
+        "location": "Introhive",
+        "start": "September 2021",
+        "end": "April 2022",
+        "description": "Completed two co-op work terms (internships) at Introhive as an associate software engineer performing the role of a full stack developer. Engineered solutions to existing stories, fixed multiple gating and top priority bugs and performed rigorous testing of the application."
+      }
+    ]
+  }
 }

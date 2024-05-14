@@ -1,5 +1,24 @@
 package components
 
 templ FooterShow(data *FooterJSON) {
-    <footer>Footer text</footer>
+	<footer>
+		<div class="brand">
+			<h4>{ data.Title }</h4>
+			<p>{ data.Subtitle }</p>
+		</div>
+		<div class="links">
+			for _, section := range data.Sections {
+				<div class="link_section">
+					<h6>{ section.SectionTitle }</h6>
+					<ul>
+						for _, link := range section.Links {
+							<a href={ templ.URL(link.URL) }>
+								<li>{ link.Title }</li>
+							</a>
+						}
+					</ul>
+				</div>
+			}
+		</div>
+	</footer>
 }
