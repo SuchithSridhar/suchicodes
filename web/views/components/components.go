@@ -1,11 +1,11 @@
 package components
 
-const NavbarJsonFile = "./web/components/navbar.json"
-const FooterJsonFile = "./web/components/footer.json"
+const NavbarJsonFile = "./web/views/components/navbar.json"
+const FooterJsonFile = "./web/views/components/footer.json"
 
 type NavbarJSON struct {
-	Brand string `json:"brand"`
-	Links []struct {
+	Brand  string `json:"brand"`
+	Links  []struct {
 		Title string `json:"title"`
 		URL   string `json:"url"`
 	} `json:"links"`

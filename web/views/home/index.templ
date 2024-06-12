@@ -1,45 +1,109 @@
 package home
 
 import (
-	cmpts "github.com/suchithsridhar/suchicodes/web/components"
+	cmpts "github.com/suchithsridhar/suchicodes/web/views/components"
 )
 
 templ IndexShow(data *IndexJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts.FooterJSON) {
 	<!DOCTYPE html>
 	<html lang="en">
+
 		<head>
 			<title>Suchicodes</title>
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<link rel="stylesheet" href="/css/home/index.css" />
 		</head>
+
 		<body>
+
+			<div class="curve-one-container">
+				<svg width="1920" height="700" viewBox="0 0 1920 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M721.808 504.274C472.393 501.751 0 184.912 0 184.912V0H1920V700C1920 700 1703.01 431.102 1455.09 393.975C1207.17 356.849 971.224 506.797 721.808 504.274Z" fill="url(#paint0_linear_1_5)"/>
+					<defs>
+					<linearGradient id="paint0_linear_1_5" x1="576.15" y1="143.46" x2="1574.58" y2="559.776" gradientUnits="userSpaceOnUse">
+						<stop offset="0%" style="stop-color: var(--c-primary-1);" />
+						<stop offset="100%" style="stop-color: var(--c-secondary-1);" />
+					</linearGradient>
+					</defs>
+				</svg>
+			</div>
+
 			@cmpts.NavbarShow(navbarData)
+
 			<section id="landing">
-				<h1>{ data.Landing.Title }</h1>
-				<p>{ data.Landing.About }</p>
-				<div class="btns">
-					for _, btn := range data.Landing.Buttons {
-						<a href={ templ.URL(btn.URL) } class="btn">{ btn.Text }</a>
-					}
+				<div class="left-container">
+					<h1>{ data.Landing.Title }</h1>
+					<p>{ data.Landing.About }</p>
+					<div class="btns">
+						for _, btn := range data.Landing.Buttons {
+							<a href={ templ.URL(btn.URL) } class="btn">{ btn.Text }</a>
+						}
+					</div>
 				</div>
 				<div class="image-section">
 					<img src={ string(templ.URL(data.Landing.Image.Src)) } alt={ data.Landing.Image.Alt }/>
 				</div>
 			</section>
+
 			<section id="visit">
 				<h2>{ data.VisitSection.Title }</h2>
-				for _, topic := range data.VisitSection.Topics {
-					<h4>{ topic.Title }</h4>
-					<p class="subtitle">{ topic.Subtitle }</p>
-					for _, btn := range topic.Buttons {
-						<a href={ templ.URL(btn.URL) } class="btn">{ btn.Text }</a>
+				<div class="cards-container">
+					for _, topic := range data.VisitSection.Topics {
+						<div class="card">
+							<h4>{ topic.Title }</h4>
+							<p class="subtitle">{ topic.Subtitle }</p>
+							<div class="btns">
+								for _, btn := range topic.Buttons {
+									<a href={ templ.URL(btn.URL) } class="btn">{ btn.Text }</a>
+								}
+							</div>
+						</div>
 					}
-				}
+				</div>
 			</section>
+
+			<div class="curve-two-container">
+
+				<svg width="1920" height="537" viewBox="0 0 1920 537" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M374.5 466C287.5 400 104.167 73 0 237V0C54.8333 189.5 266.932 -34.6897 487 171.5C598 275.5 819 409.5 1127 275.5C1435 141.5 1597.5 212.5 1757 237C1900.81 259.09 1920 139 1920 139V375.5C1826 313.5 1757 380.5 1684.5 438.5C1504.57 582.442 1303.5 531.709 1233 507.5C1147.69 478.205 1247 513.791 1116.5 466C974.383 413.955 878.5 375.209 750.5 438.5C622.5 501.791 487 551.345 374.5 466Z" fill="url(#paint0_linear_17_344)"/>
+					<defs>
+					<linearGradient id="paint0_linear_17_344" x1="275" y1="427.506" x2="1810.5" y2="773.503" gradientUnits="userSpaceOnUse">
+						<stop style="stop-color: var(--c-primary-1);"/>
+						<stop offset="1" style="stop-color: var(--c-secondary-1);"/>
+					</linearGradient>
+					</defs>
+				</svg>
+
+			</div>
+
 			<section id="about">
-				<h2>{ data.AboutSection.Title }</h2>
-				<p>{ data.AboutSection.Content }</p>
+				<div class="title-section">
+					<div class="circles-img">
+						<svg width="428" height="467" viewBox="0 0 428 467" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g filter="url(#filter0_f_17_765)">
+						<rect x="4" y="4" width="130" height="130" rx="65" style="fill: var(--c-primary-1);"/>
+						<rect x="283" y="103" width="130" height="130" rx="65" style="fill: var(--c-secondary-1);"/>
+						<rect x="15" y="287" width="130" height="130" rx="65" style="fill: var(--c-secondary-1);"/>
+						<rect x="294" y="333" width="130" height="130" rx="65" style="fill: var(--c-primary-1);"/>
+						</g>
+						<defs>
+						<filter id="filter0_f_17_765" x="0" y="0" width="428" height="467" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+						<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+						<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+						<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_17_765"/>
+						</filter>
+						</defs>
+						</svg>
+					</div>
+
+					<h2>{ data.AboutSection.Title }</h2>
+				</div>
+				<div class="about-text">
+					<p>{ data.AboutSection.Content }</p>
+				</div>
 			</section>
+
 			<section id="work-experience">
 				<h2>{ data.WorkSection.Title }</h2>
 				<div class="experiences-list">
@@ -52,7 +116,9 @@ templ IndexShow(data *IndexJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts
 					}
 				</div>
 			</section>
+
 			@cmpts.FooterShow(footerData)
+
 		</body>
 	</html>
 }

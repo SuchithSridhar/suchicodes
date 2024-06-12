@@ -1,0 +1,24 @@
+{
+    "title": "Suchicodes API",
+    "about": "Almost all of suchicodes is viewable/controllable through an API. This page is going to contain all the documentation required to use any of the APIs that it offers (hopefully). Almost every page is written as an API first and then presented as an HTML document using a template. This allows me to build different UIs using the same APIs.",
+    "api_table_endpoint_col": "Endpoint",
+    "api_table_desc_col": "Description",
+    "api_endpoints": [
+        {
+            "endpoint":  "/api/pages/api",
+            "desc": "This endpoint is the API version of this webpage."
+        },
+        {
+            "endpoint": "/api/pages/index",
+            "desc":  "The index page available at /"
+        },
+        {
+            "endpoint": "/api/components/navbar",
+            "desc":  "API endpoint for navbar"
+        },
+        {
+            "endpoint": "/api/components/footer",
+            "desc":  "API endpoint for footer"
+        }
+    ]
+}

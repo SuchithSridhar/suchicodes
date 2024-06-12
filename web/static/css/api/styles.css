@@ -1,0 +1,69 @@
+@import url("/css/base.css");
+@import url("/css/components/navbar.css");
+@import url("/css/components/footer.css");
+section {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 576px) {
+  section {
+    width: calc(100% - 20px);
+    padding: 0 20px;
+  }
+}
+@media (min-width: 576px) {
+  section {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  section {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  section {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  section {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  section {
+    max-width: 1320px;
+  }
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: var(--c-background);
+  border-collapse: collapse;
+  border-radius: 0.25rem;
+}
+table th, table td {
+  padding: 0.75rem;
+  border: 1px solid var(--c-background-dark);
+}
+table th {
+  font-weight: bold;
+  background-color: var(--c-background-dark);
+  text-align: left;
+}
+table tr:nth-child(even) {
+  background-color: var(--c-background-dark);
+}
+table tbody tr:nth-of-type(odd) {
+  background-color: var(--c-background);
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,40 @@
+// Variables (optional, for customization)
+$border-color: var(--c-background-dark);
+$table-bg: var(--c-background);
+$table-bg-light: var(--c-background-light);
+$table-bg-dark: var(--c-background-dark);
+$table-border-radius: 0.25rem;
+$table-padding: 0.75rem;
+
+// Mixin for table styles
+@mixin bootstrap-table($variant: null) {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: $table-bg;
+  border-collapse: collapse;
+  border-radius: $table-border-radius;
+
+  th, td {
+    padding: $table-padding;
+    border: 1px solid $border-color;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: $table-bg-dark;
+    text-align: left;
+  }
+
+  tr {
+    &:nth-child(even) {
+      background-color: $table-bg-dark;
+    }
+  }
+
+  // Optional classes
+  @if $variant == 'striped' {
+    tbody tr:nth-of-type(odd) {
+      background-color: $table-bg;
+    }
+  }
+}

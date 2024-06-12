@@ -3,11 +3,11 @@ package handlers
 import (
 	echo "github.com/labstack/echo/v4"
 	cmpts "github.com/suchithsridhar/suchicodes/web/views/components"
-	home "github.com/suchithsridhar/suchicodes/web/views/home"
+	api "github.com/suchithsridhar/suchicodes/web/views/api"
 )
 
-func handleIndexShow(ctx echo.Context) error {
-	indexData, err := loadJSONFromFile[home.IndexJSON](home.IndexJsonFile)
+func handleApiHome(ctx echo.Context) error {
+	apiData, err := loadJSONFromFile[api.ApiHomeJSON](api.ApiHomeJsonFile)
 	if err != nil {
 		// handle error
 	}
@@ -22,10 +22,10 @@ func handleIndexShow(ctx echo.Context) error {
 		// handle error
 	}
 
-	return renderTemplate(ctx, home.IndexShow(indexData, navbarData, footerData))
+	return renderTemplate(ctx, api.ApiShow(apiData, navbarData, footerData))
 }
 
-func handleIndexApi(ctx echo.Context) error {
-	status, data := serverJSONAsApi[home.IndexJSON](home.IndexJsonFile)
+func handleApiApi(ctx echo.Context) error {
+	status, data := serverJSONAsApi[api.ApiHomeJSON](api.ApiHomeJsonFile)
 	return ctx.JSON(status, data)
 }

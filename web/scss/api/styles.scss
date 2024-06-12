@@ -1,0 +1,19 @@
+@use "../variables" as v;
+@use "../table" as t;
+
+@import url("/css/base.css");
+@import url("/css/components/navbar.css");
+@import url("/css/components/footer.css");
+
+section {
+  @include v.make_container;
+}
+
+table {
+  @include t.bootstrap-table("striped");
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}

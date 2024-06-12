@@ -2,7 +2,7 @@ package handlers
 
 import (
 	echo "github.com/labstack/echo/v4"
-	components "github.com/suchithsridhar/suchicodes/web/components"
+	components "github.com/suchithsridhar/suchicodes/web/views/components"
 )
 
 func handleNavbarApi(ctx echo.Context) error {

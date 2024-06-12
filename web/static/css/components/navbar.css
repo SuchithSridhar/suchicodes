@@ -1,0 +1,99 @@
+navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 40px;
+}
+navbar .brand {
+  padding: 10px 10px;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+navbar .brand a {
+  text-decoration: none;
+  color: var(--c-foreground);
+}
+navbar .brand a:hover {
+  color: var(--c-primary-2);
+}
+navbar .links ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+navbar .links ul li {
+  padding: 0 10px;
+}
+navbar .links ul li a {
+  display: block;
+  color: var(--c-foreground);
+  padding: 10px 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.6em;
+}
+navbar .links ul li a:hover {
+  color: var(--c-primary-2);
+}
+navbar .menu-icon {
+  display: none;
+}
+
+div.gear-icon {
+  display: block;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+div.gear-icon svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+div.gear-icon svg:hover {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  navbar {
+    padding: 5px 10px;
+  }
+  navbar .menu-icon {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+  }
+  navbar .menu-icon svg {
+    padding: 3px;
+    border: 1px solid transparent;
+  }
+  navbar .menu-icon svg:hover {
+    cursor: pointer;
+    border: 1px solid var(--c-foreground);
+    border-radius: 5px;
+  }
+  navbar .links {
+    display: none;
+    position: absolute;
+    background: var(--c-background);
+    top: 70px;
+    right: 10px;
+    text-align: right;
+    border: 3px solid var(--c-background-dark);
+  }
+  navbar .links ul {
+    display: flex;
+    flex-direction: column;
+  }
+  navbar .links.active {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=navbar.css.map */

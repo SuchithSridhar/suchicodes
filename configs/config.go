@@ -59,7 +59,7 @@ func InitConfig() {
 			slog.Error("Unable to set root directory.")
 			os.Exit(1)
 		}
-		Config.DATABASE_URI = cwd
+		Config.ROOT_DIRECTORY = cwd
 	}
 
 	if value, ok = os.LookupEnv("SECRET_KEY"); ok {
@@ -72,8 +72,7 @@ func InitConfig() {
 	}
 
 	if Config.ENVIRONMENT == production {
-		if value, ok = os.LookupEnv("LISTEN_PORT"); ok {
-			if intvalue, err := strconv.ParseInt(value, 10, 64); err != nil {
+		if value, ok = os.LookupEnv("LISTEN_PORT"); ok { if intvalue, err := strconv.ParseInt(value, 10, 64); err != nil {
 				if !ok || intvalue < 20 || intvalue > 60000 {
 					slog.Error("A valid port not set for production environment.")
 					os.Exit(1)

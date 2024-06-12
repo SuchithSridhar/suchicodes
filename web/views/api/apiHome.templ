@@ -1,0 +1,44 @@
+package api
+
+import (
+	cmpts "github.com/suchithsridhar/suchicodes/web/views/components"
+)
+
+// API home page
+templ ApiShow(data *ApiHomeJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts.FooterJSON) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Suchicodes API</title>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<link rel="stylesheet" href="/css/api/styles.css" />
+		</head>
+		<body>
+			@cmpts.NavbarShow(navbarData)
+			<section id="information">
+				<h1>{ data.Title }</h1>
+				<p>{ data.About }</p>
+			</section>
+			<section id="api-endpoints">
+				<table>
+					<thead>
+						<tr>
+							<th>{ data.APITableEndpointCol }</th>
+							<th>{ data.APITableDescCol }</th>
+						</tr>
+					</thead>
+					<tbody>
+						for _, endpoint := range data.APIEndpoints {
+							<tr>
+								<td><a href={ templ.URL(endpoint.Endpoint) }>{ endpoint.Endpoint }</a></td>
+								<td>{ endpoint.Desc }</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</section>
+			@cmpts.FooterShow(footerData)
+		</body>
+	</html>
+}

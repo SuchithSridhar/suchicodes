@@ -1,12 +1,22 @@
-VIEWS_DIR = ./web/
+VIEWS_DIR = ./web/views/
+SCSS_SRC_DIR = ./web/scss/
+CSS_OUTPUT_DIR = ./web/static/css/
 NOTIFICATION_TITLE = "Suchicodes Makefile"
 
-run: gen
+run: gen_templ gen_sass
 	@go run main.go
 
-gen:
+gen_templ:
 	# generate templates in 
 	@templ generate -path $(VIEWS_DIR)
+
+gen_sass:
+	@mkdir -p $(CSS_OUTPUT_DIR)
+	@sass $(SCSS_SRC_DIR):$(CSS_OUTPUT_DIR)
+
+watch_sass:
+	@mkdir -p $(CSS_OUTPUT_DIR)
+	@sass --watch $(SCSS_SRC_DIR):$(CSS_OUTPUT_DIR)
 
 fmt:
 	# format all Go source files
@@ -19,5 +29,5 @@ kill:
 	# kill running Go server
 	@-pkill -f "go run main.go"
 
-.PHONY: run gen fmt kill
+.PHONY: run gen_templ gen_sass fmt kill
 

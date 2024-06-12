@@ -1,0 +1,61 @@
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+$breakpoint-xxxl: 1700px;
+
+// Define container max-width variables
+$container-max-width-sm: 540px;
+$container-max-width-md: 720px;
+$container-max-width-lg: 960px;
+$container-max-width-xl: 1140px;
+$container-max-width-xxl: 1320px;
+$container-max-width-xxxl: 1500px;
+
+@mixin make-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (max-width: $breakpoint-sm) {
+    width: calc(100% - 20px);
+    padding: 0 20px;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    max-width: $container-max-width-sm;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    max-width: $container-max-width-md;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    max-width: $container-max-width-lg;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    max-width: $container-max-width-xl;
+  }
+
+  @media (min-width: $breakpoint-xxl) {
+    max-width: $container-max-width-xxl;
+  }
+}
+
+@mixin make-large-container {
+  @include make-container;
+
+  @media (min-width: $breakpoint-xxxl) {
+    max-width: $container-max-width-xxxl;
+  }
+}
+
+@mixin flex-container($direction: row, $justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
