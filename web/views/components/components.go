@@ -9,6 +9,9 @@ type NavbarJSON struct {
 		Title string `json:"title"`
 		URL   string `json:"url"`
 	} `json:"links"`
+	Settings struct {
+		ThemeToggler []string `json:"theme-toggler"`
+	} `json:"settings"`
 }
 
 type FooterJSON struct {

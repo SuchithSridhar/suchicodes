@@ -55,5 +55,16 @@ templ NavbarShow(data *NavbarJSON) {
 		</svg>
 	</div>
 
+	<div class="settings-menu-container">
+	<div class="settings-menu">
+		<h3>Settings</h3>
+		<div class="theme-toggler">
+			for _, mode := range data.Settings.ThemeToggler {
+				<button tabindex="-1" class="btn" data-mode={ mode }>{ mode }</button>
+			}
+		</div>
+	</div>
+	</div>
+
 	<script src="/js/navbar.js" async defer></script>
 }

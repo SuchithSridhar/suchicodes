@@ -63,8 +63,72 @@ div.gear-icon {
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
-    &:hover {
-      transform: rotate(180deg);
+  }
+
+  &.active svg {
+    transform: rotate(180deg);
+  }
+}
+
+div.settings-menu-container {
+  position: fixed;
+
+  bottom: 90px;
+  right: 20px;
+
+  width: 500px;
+  height: 500px;
+  max-height: 0;
+  max-width: 0;
+
+  padding: 0;
+  overflow: hidden;
+
+  transition: max-height ease-in-out 0.5s, max-width ease-in-out 0.5s;
+  z-index: 10;
+
+  &.active {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .settings-menu {
+    border: 2px solid var(--c-foreground);
+    border-radius: 20px;
+    background-color: var(--c-background);
+    height: calc(100% - 24px);
+    width: calc(100% - 24px);
+    padding: 10px;
+
+    h3 {
+      font-size: 1.4em;
+      text-align: center;
+    }
+
+    .theme-toggler {
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+      border-radius: 10px;
+
+      button {
+        margin: 0 2px;
+        flex-grow: 1;
+        padding: 10px 5px;
+        color: var(--c-foreground);
+        background-color: var(--c-background-light);
+        border: none;
+        font-size: 1.3em;
+        &.active {
+          background-color: var(--c-secondary-1);
+        }
+        &:hover {
+          background-color: var(--c-secondary-1-hover);
+        }
+        &.active:hover {
+          background-color: var(--c-secondary-1-hover);
+        }
+      }
     }
   }
 }
@@ -108,5 +172,10 @@ div.gear-icon {
     .links.active {
       display: block;
     }
+  }
+
+  div.settings-menu-container {
+    width: 90vw;
+    height: 30vh;
   }
 }

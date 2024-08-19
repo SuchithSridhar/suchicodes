@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --c-background: #D9D9D9;
+  // old background: #D9D9D9
+  --c-background: #eaeaea;
   --c-background-light: #dee2e6;
   --c-background-dark: #C9C9C9;
   --c-foreground: #040303;
@@ -11,6 +12,26 @@
   --c-secondary-1: #7E8CD8;
   --c-secondary-1-hover: #6172CF;
   --c-secondary-2: #262F6F;
+
+  --f-primary-fam: "Montserrat", sans-serif;
+
+  --c-three-1: #9CA3B6;
+  --c-four-1: #DAB9AF;
+  --c-five-1: #9AAB6C;
+}
+
+// dark theme settings
+[data-theme="dark"] {
+  --c-background: #15182D;
+  --c-background-light: #1B2045;
+  --c-background-dark: #111323;
+  --c-foreground: #FFFFFF;
+  --c-primary-1: #B43C15;
+  --c-primary-1-hover: #E98C4C;
+  --c-primary-2: #EBA16E;
+  --c-secondary-1: #262F6F;
+  --c-secondary-1-hover: #6172CF;
+  --c-secondary-2: #7E8CD8;
 
   --f-primary-fam: "Montserrat", sans-serif;
 

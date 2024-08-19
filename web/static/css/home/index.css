@@ -13,17 +13,24 @@ div.curve-one-container svg {
   display: block;
 }
 
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 section#landing {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
   display: flex;
   min-height: 87vh;
   align-items: center;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 @media (max-width: 576px) {
   section#landing {
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     padding: 0 20px;
   }
 }
@@ -111,6 +118,7 @@ section#landing .image-section img {
   section#landing {
     flex-direction: column-reverse;
     margin-top: 50px;
+    padding: 0 10px;
   }
   section#landing .left-container {
     flex: 0 0 0;
@@ -124,10 +132,11 @@ section#landing .image-section img {
   section#landing .left-container .btns {
     gap: 25px;
     margin-top: 20px;
+    flex-wrap: wrap;
   }
   section#landing .left-container .btns .btn {
     padding: 15px 30px;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   section#landing .image-section {
     flex: 0 0 0;
@@ -208,15 +217,19 @@ section#visit .cards-container .card:nth-child(3) {
   justify-self: center;
 }
 @media (max-width: 768px) {
+  section#visit {
+    padding: 0px;
+  }
   section#visit h2 {
     margin-top: 100px;
     font-size: 2.5em;
+    padding: 0 10px;
   }
   section#visit .cards-container {
     grid-template-columns: 1fr;
   }
   section#visit .cards-container .card {
-    padding: 10px;
+    padding: 0;
     margin-bottom: 20px;
   }
   section#visit .cards-container .card h4 {
@@ -226,6 +239,7 @@ section#visit .cards-container .card:nth-child(3) {
     font-size: 1.3em;
   }
   section#visit .cards-container .card .btns {
+    flex-wrap: wrap;
     gap: 15px;
   }
   section#visit .cards-container .card .btns .btn {
@@ -244,7 +258,7 @@ section#visit .cards-container .card:nth-child(3) {
   top: -200px;
 }
 .curve-two-container svg {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   position: absolute;
 }
@@ -288,7 +302,7 @@ section#about div.circles-img svg {
 @media (max-width: 768px) {
   section#about {
     grid-template-columns: 1fr;
-    margin-top: 150px;
+    margin-top: 80px;
   }
   section#about h2 {
     text-align: center;
@@ -309,7 +323,7 @@ section#about div.circles-img svg {
     z-index: -1;
     max-width: 100%;
     height: auto;
-    margin: 0 50px;
+    margin: 0;
   }
 }
 
@@ -347,6 +361,7 @@ section#work-experience .experiences-list .experience h4 {
 }
 section#work-experience .experiences-list .experience div.time {
   font-weight: 600;
+  color: var(--c-primary-2);
 }
 section#work-experience .experiences-list .experience p {
   line-height: 1.4em;
@@ -377,6 +392,29 @@ section#work-experience .experiences-list .experience:nth-child(odd):after {
 section#work-experience .experiences-list .experience:nth-child(even):after {
   left: -13.5%;
 }
+@media (max-width: 768px) {
+  section#work-experience .experiences-list .experience {
+    padding-left: 10%;
+    width: 90%;
+  }
+  section#work-experience .experiences-list .experience:nth-child(odd) {
+    left: 0;
+    text-align: left;
+  }
+  section#work-experience .experiences-list .experience:nth-child(even) {
+    left: 0;
+    text-align: left;
+  }
+  section#work-experience .experiences-list .experience:nth-child(odd):after {
+    left: calc(2% - 12.5px);
+  }
+  section#work-experience .experiences-list .experience:nth-child(even):after {
+    left: calc(2% - 12.5px);
+  }
+  section#work-experience .experiences-list:after {
+    left: calc(2% - 2px);
+  }
+}
 
 section {
   width: 100%;
@@ -385,7 +423,7 @@ section {
 }
 @media (max-width: 576px) {
   section {
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     padding: 0 20px;
   }
 }

@@ -17,12 +17,19 @@ div.curve-one-container {
   }
 }
 
-section#landing {
-  @include v.make-large-container;
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
+section#landing {
   display: flex;
   min-height: 87vh;
   align-items: center;
+
+  @include v.make-large-container;
 
   .left-container {
     flex: 0 0 60%;
@@ -85,6 +92,7 @@ section#landing {
   @media (max-width: v.$breakpoint-md) {
     flex-direction: column-reverse;
     margin-top: 50px;
+    padding: 0 10px;
 
     .left-container {
       flex: 0 0 0;
@@ -98,9 +106,10 @@ section#landing {
       .btns {
         gap: 25px;
         margin-top: 20px;
+        flex-wrap: wrap;
         .btn {
           padding: 15px 30px;
-          font-size: 1.5em;
+          font-size: 1.2em;
         }
       }
     }
@@ -199,14 +208,16 @@ section#visit {
   }
 
   @media (max-width: v.$breakpoint-md) {
+    padding: 0px;
     h2 {
       margin-top: 100px;
       font-size: 2.5em;
+      padding: 0 10px;
     }
     .cards-container {
       grid-template-columns: 1fr;
       .card {
-        padding: 10px;
+        padding: 0;
         margin-bottom: 20px;
         h4 {
           font-size: 1.7em;
@@ -215,6 +226,7 @@ section#visit {
           font-size: 1.3em;
         }
         .btns {
+          flex-wrap: wrap;
           gap: 15px;
 
           .btn {
@@ -237,7 +249,7 @@ section#visit {
   z-index: -1;
   top: -200px;
   svg {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     position: absolute;
   }
@@ -283,7 +295,7 @@ section#about {
 
   @media (max-width: v.$breakpoint-md) {
     grid-template-columns: 1fr;
-    margin-top: 150px;
+    margin-top: 80px;
     h2 {
       text-align: center;
       font-size: 2.5em;
@@ -303,7 +315,7 @@ section#about {
         z-index: -1;
         max-width: 100%;
         height: auto;
-        margin: 0 50px;
+        margin: 0;
       }
     }
   }
@@ -346,6 +358,7 @@ section#work-experience {
 
       div.time {
         font-weight: 600;
+        color: var(--c-primary-2);
       }
 
       p {
@@ -383,7 +396,38 @@ section#work-experience {
       }
     }
   }
+
+  @media (max-width: v.$breakpoint-md) {
+    .experiences-list {
+      .experience {
+        padding-left: 10%;
+        width: 90%;
+
+        &:nth-child(odd) {
+          left: 0;
+          text-align: left;
+        }
+
+        &:nth-child(even) {
+          left: 0;
+          text-align: left;
+        }
+
+        &:nth-child(odd):after {
+          left: calc(2% - 12.5px);
+        }
+        &:nth-child(even):after {
+          left: calc(2% - 12.5px);
+        }
+      }
+
+      &:after {
+        left: calc(2% - 2px);
+      }
+    }
+  }
 }
+
 
 section {
   @include v.make-large-container;

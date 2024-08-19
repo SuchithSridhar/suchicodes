@@ -26,7 +26,7 @@
         "subtitle": "Learn about my work, projects, and interests!",
         "buttons": [
           {
-            "text": "Work Experience",
+            "text": "Career",
             "url": "/#work-experience"
           },
           {
@@ -75,7 +75,7 @@
   },
   "about_section": {
     "title": "A Little About Me",
-    "content": "I'm a Developer - I enjoy building stuff on the web and otherwise :). I am currently pursuing my undergraduate degree in computer science at the Dalhousie University, Canada.\n\nI'm a Full-Stack programmer who also specializes in GUI and CLI (Command-line interface) based application programming for Windows and Linux. I am passionate about computers and servers and intrigued about operating systems and their workings."
+    "content": "I'm a developer - I enjoy building stuff on the web and otherwise. I am currently pursuing my undergraduate degree in computer science at the Dalhousie University, Canada.\n\nI'm a Full-Stack programmer who also specializes in GUI and CLI (Command-line interface) based application programming for Windows and Linux. I am passionate about computers and servers and intrigued about operating systems and their workings."
   },
   "work_section": {
     "title": "Work Experience",
@@ -85,7 +85,7 @@
         "location": "Dalhousie",
         "start": "May 2024",
         "end": "Present",
-        "description": "Working with Professor Qiang Ye on building training machine learning models to improve intrusion detection systems (IDS)."
+        "description": "Working with Professor Qiang Ye on Network Security using machine learning techniques to build intruction detection systems (IDS)."
       },
       {
         "position": "Freelance Developer",

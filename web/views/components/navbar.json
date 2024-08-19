@@ -17,5 +17,13 @@
       "title": "Notes",
       "url": "/notes"
     }
-  ]
+  ],
+
+  "settings": {
+    "theme-toggler": [
+      "System",
+      "Light",
+      "Dark"
+    ]
+  }
 }
