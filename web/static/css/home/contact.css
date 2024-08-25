@@ -1,0 +1,172 @@
+@import url("/css/base.css");
+@import url("/css/components/navbar.css");
+@import url("/css/components/footer.css");
+section#contact {
+  color: var(--c-foreground);
+}
+section#contact h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+section#contact .parts {
+  display: flex;
+  flex-wrap: wrap;
+}
+section#contact .parts .contact-form {
+  padding: 3% 2%;
+  margin-right: 20px;
+  flex-grow: 1;
+}
+section#contact .parts .contact-form h5 {
+  margin-top: 0;
+  font-size: 1.8em;
+}
+section#contact .parts .contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+section#contact .parts .contact-form form input,
+section#contact .parts .contact-form form textarea {
+  padding: 10px;
+  font-size: 1.2em;
+  font-family: var(--f-primary-fam);
+  margin-bottom: 20px;
+  border: 3px solid var(--c-background-dark);
+  border-radius: 5px;
+  color: var(--c-foreground);
+  background-color: var(--c-background-dark);
+}
+section#contact .parts .contact-form form input:focus-visible,
+section#contact .parts .contact-form form textarea:focus-visible {
+  outline: none;
+}
+section#contact .parts .contact-form form input:focus-visible,
+section#contact .parts .contact-form form textarea:focus-visible {
+  border: 3px solid transparent;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, var(--c-background-dark), var(--c-background-dark)) padding-box, linear-gradient(130deg, var(--c-primary-1), var(--c-secondary-1)) border-box;
+}
+section#contact .parts .contact-form form textarea {
+  resize: none;
+}
+section#contact .parts .contact-form form div {
+  margin-bottom: 20px;
+}
+section#contact .parts .contact-form form button.btn-send {
+  margin-top: 20px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  border-radius: 3px;
+  padding: 10px 0;
+  background: linear-gradient(130deg, var(--c-primary-1), var(--c-secondary-1));
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--c-foreground);
+  border: none;
+}
+section#contact .parts .contact-form form button.btn-send:hover {
+  cursor: pointer;
+}
+@keyframes spin {
+  0% {
+    --bg-angle: 0deg;
+  }
+  100% {
+    --bg-angle: 360deg;
+  }
+}
+section#contact .parts .contact-form {
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, var(--c-background), var(--c-background)) padding-box, conic-gradient(from var(--bg-angle), var(--c-primary-1), var(--c-secondary-1) 66%, var(--c-primary-1)) border-box;
+  animation: spin 5s infinite linear;
+}
+section#contact .parts .contact-buttons {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 3% 2%;
+}
+section#contact .parts .contact-buttons a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 1.4em;
+  text-decoration: none;
+  color: var(--c-foreground);
+  border-radius: 3px;
+}
+section#contact .parts .contact-buttons a:nth-child(odd) {
+  border: solid 3px var(--c-primary-1);
+}
+section#contact .parts .contact-buttons a:nth-child(odd):hover {
+  background-color: var(--c-primary-1);
+}
+section#contact .parts .contact-buttons a:nth-child(even) {
+  border: solid 3px var(--c-secondary-1);
+}
+section#contact .parts .contact-buttons a:nth-child(even):hover {
+  background-color: var(--c-secondary-1);
+}
+section#contact .parts .contact-buttons a .icon img {
+  width: 30px;
+  height: 30px;
+  fill: var(--c-foreground);
+}
+section#contact .parts .contact-buttons a span {
+  line-height: 30px;
+  padding-left: 10px;
+}
+@media (max-width: 768px) {
+  section#contact .parts .contact-form {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+section {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 576px) {
+  section {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
+}
+@media (min-width: 576px) {
+  section {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  section {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  section {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  section {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  section {
+    max-width: 1320px;
+  }
+}
+@media (min-width: 1700px) {
+  section {
+    max-width: 1500px;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

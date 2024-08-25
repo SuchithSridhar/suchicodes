@@ -1,0 +1,64 @@
+package home
+
+import (
+	cmpts "github.com/suchithsridhar/suchicodes/web/views/components"
+)
+
+templ AboutShow(data *AboutJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts.FooterJSON) {
+	<!DOCTYPE html>
+	<html lang="en">
+
+		<head>
+			<title>About | Suchicodes</title>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<link rel="stylesheet" href="/css/home/about.css" />
+		</head>
+
+		<body>
+
+			@cmpts.NavbarShow(navbarData)
+
+			<section id="about">
+				<div class="title">
+					<div class="scrible background-art">
+						<svg width="95%" height="125px" viewBox="0 0 909 163" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M20 20L142.447 143V20L264.27 143L267.393 20L393.589 143V20L517.285 143L518.535 20L644.106 143V20L767.178 143V20L889 143" stroke="url(#paint0_linear_107_75)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+							<defs>
+								<linearGradient id="paint0_linear_107_75" x1="97" y1="31.5001" x2="808" y2="152" gradientUnits="userSpaceOnUse">
+									<stop style="stop-color: var(--c-primary-1);" />
+									<stop offset="1" style="stop-color: var(--c-secondary-1);" />
+								</linearGradient>
+							</defs>
+						</svg>
+					</div>
+					<h1>{ data.Title }</h1>
+				</div>
+
+				<div class="content">
+					<div class="line background-art">
+						<svg width="20px" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<line x1="50%" y1="5%" x2="50%" y2="95%" stroke="url(#paint0_linear_107_4)" stroke-width="20" stroke-linecap="round"></line>
+						<defs>
+							<linearGradient id="paint0_linear_107_4" x1="0" y1="0" x2="0" y2="100%" gradientUnits="userSpaceOnUse">
+								<stop style="stop-color: var(--c-primary-1);"></stop>
+								<stop offset="1" style="stop-color: var(--c-secondary-1);"></stop>
+							</linearGradient>
+						</defs>
+					</svg>
+					</div>
+					<div class="paragraphs">
+						for _, paragraph := range data.Content {
+							<p>
+								@templ.Raw(paragraph)
+							</p>
+						}
+					</div>
+				</div>
+			</section>
+
+			@cmpts.FooterShow(footerData)
+
+		</body>
+	</html>
+}

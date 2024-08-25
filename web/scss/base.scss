@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@property --bg-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
 :root {
   // old background: #D9D9D9
   --c-background: #eaeaea;
   --c-background-light: #dee2e6;
-  --c-background-dark: #C9C9C9;
+  --c-background-dark: #e2e2e2;
   --c-foreground: #040303;
   --c-primary-1: #EBA16E;
   --c-primary-1-hover: #E98C4C;
@@ -12,6 +18,8 @@
   --c-secondary-1: #7E8CD8;
   --c-secondary-1-hover: #6172CF;
   --c-secondary-2: #262F6F;
+
+  --c-link: #4a579d;
 
   --f-primary-fam: "Montserrat", sans-serif;
 
@@ -32,6 +40,8 @@
   --c-secondary-1: #262F6F;
   --c-secondary-1-hover: #6172CF;
   --c-secondary-2: #7E8CD8;
+
+  --c-link: #8f9ce1;
 
   --f-primary-fam: "Montserrat", sans-serif;
 

@@ -16,6 +16,9 @@ navbar .brand a {
 navbar .brand a:hover {
   color: var(--c-primary-2);
 }
+navbar .links {
+  z-index: 99;
+}
 navbar .links ul {
   display: flex;
   flex-direction: row;

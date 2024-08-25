@@ -7,6 +7,7 @@ import (
 	"os"
 
 	cookie "github.com/suchithsridhar/suchicodes/pkg/cookie_manager"
+	cmpts "github.com/suchithsridhar/suchicodes/web/views/components"
 
 	"github.com/a-h/templ"
 	"github.com/labstack/echo/v4"
@@ -54,4 +55,18 @@ func serverJSONAsApi[T any](filename string) (int, interface{}) {
 	}
 
 	return http.StatusOK, data
+}
+
+func getNavbarAndFooter() (*cmpts.NavbarJSON, *cmpts.FooterJSON, error) {
+	navbarData, err := loadJSONFromFile[cmpts.NavbarJSON](cmpts.NavbarJsonFile)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	footerData, err := loadJSONFromFile[cmpts.FooterJSON](cmpts.FooterJsonFile)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	return navbarData, footerData, nil
 }

@@ -21,6 +21,7 @@ navbar {
   }
 
   .links  {
+    z-index: 99;
     ul {
       display: flex;
       flex-direction: row;

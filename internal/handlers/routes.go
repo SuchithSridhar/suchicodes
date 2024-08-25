@@ -11,12 +11,17 @@ import (
 
 func SetupHandlers(app *echo.Echo) {
 
-	app.GET("/", handleIndexShow)
 
-	routeWithSlash(app, "/api/", handleApiHome)
+	// home pages
+	app.GET("/", handleIndexShow)
+	routeWithoutSlash(app, "/about", handleAboutShow)
+	routeWithoutSlash(app, "/contact", handleContactShow)
 
 	// api endpoints
+	routeWithSlash(app, "/api/", handleApiHome)
 	routeWithoutSlash(app, "/api/pages/index", handleIndexApi)
+	routeWithoutSlash(app, "/api/pages/about", handleAboutApi)
+	routeWithoutSlash(app, "/api/pages/contact", handleContactApi)
 	routeWithoutSlash(app, "/api/pages/api", handleApiApi)
 
 	// components

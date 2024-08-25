@@ -13,6 +13,14 @@
             "desc":  "The index page available at /"
         },
         {
+            "endpoint": "/api/pages/contact",
+            "desc":  "The contact page available at /contact"
+        },
+        {
+            "endpoint": "/api/pages/about",
+            "desc":  "The about page available at /about"
+        },
+        {
             "endpoint": "/api/components/navbar",
             "desc":  "API endpoint for navbar"
         },

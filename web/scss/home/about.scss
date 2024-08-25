@@ -1,0 +1,90 @@
+@use "../variables" as v;
+
+@import url("/css/base.css");
+@import url("/css/components/navbar.css");
+@import url("/css/components/footer.css");
+
+section#about {
+  padding-top: 50px;
+
+  .title {
+    position: relative;
+
+    h1 {
+      font-size: 4em;
+      color: var(--c-foreground);
+    }
+
+    .scrible {
+      position: absolute;
+      bottom: -40px;
+      left: -55px;
+      z-index: -1;
+    }
+  }
+
+  div.content {
+    position: relative;
+    display: flex;
+    padding-right: 30%;
+
+    div.line {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin-right: 20px;
+    }
+
+    div.paragraphs {
+      margin-left: 60px;
+      padding: 5% 0;
+      p {
+        font-weight: 300;
+        font-size: 1.4em;
+        line-height: 1.4;
+        color: var(--color-foreground);
+      }
+    }
+  }
+
+  @media (max-width: v.$breakpoint-md) {
+    .title {
+      h1 {
+        font-size: 2.2em;
+      }
+
+      .scrible {
+        left: 0;
+
+        svg {
+          width: 95%;
+          height: 125px;
+        }
+      }
+    }
+
+    div.content {
+      padding-right: 0;
+
+      div.line {
+        width: 10px;
+        svg {
+          width: 10px;
+        }
+      }
+
+      div.paragraphs {
+        margin-left: 30px;
+        p {
+          font-size: 1.2em;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}
+
+section {
+  @include v.make-large-container;
+}

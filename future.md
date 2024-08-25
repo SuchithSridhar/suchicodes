@@ -4,6 +4,10 @@ This file is a way to get back to the last thing I was doing and pick up where I
 left off. This file is going to contain information that would be required to
 continue and dump the current idea dump.
 
+# 2024, Aug 19
+
+Completed the home page and current working on the about and contact pages.
+
 # 2024, Jun 09
 
 Working on CSS for the website's home page - last thing I'm doing is building

@@ -1,0 +1,113 @@
+@import url("/css/base.css");
+@import url("/css/components/navbar.css");
+@import url("/css/components/footer.css");
+section#about {
+  padding-top: 50px;
+}
+section#about .title {
+  position: relative;
+}
+section#about .title h1 {
+  font-size: 4em;
+  color: var(--c-foreground);
+}
+section#about .title .scrible {
+  position: absolute;
+  bottom: -40px;
+  left: -55px;
+  z-index: -1;
+}
+section#about div.content {
+  position: relative;
+  display: flex;
+  padding-right: 30%;
+}
+section#about div.content div.line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin-right: 20px;
+}
+section#about div.content div.paragraphs {
+  margin-left: 60px;
+  padding: 5% 0;
+}
+section#about div.content div.paragraphs p {
+  font-weight: 300;
+  font-size: 1.4em;
+  line-height: 1.4;
+  color: var(--color-foreground);
+}
+@media (max-width: 768px) {
+  section#about .title h1 {
+    font-size: 2.2em;
+  }
+  section#about .title .scrible {
+    left: 0;
+  }
+  section#about .title .scrible svg {
+    width: 95%;
+    height: 125px;
+  }
+  section#about div.content {
+    padding-right: 0;
+  }
+  section#about div.content div.line {
+    width: 10px;
+  }
+  section#about div.content div.line svg {
+    width: 10px;
+  }
+  section#about div.content div.paragraphs {
+    margin-left: 30px;
+  }
+  section#about div.content div.paragraphs p {
+    font-size: 1.2em;
+    line-height: 1.2;
+  }
+}
+
+section {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 576px) {
+  section {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
+}
+@media (min-width: 576px) {
+  section {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  section {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  section {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  section {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  section {
+    max-width: 1320px;
+  }
+}
+@media (min-width: 1700px) {
+  section {
+    max-width: 1500px;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

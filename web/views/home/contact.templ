@@ -1,0 +1,59 @@
+package home
+
+import (
+	cmpts "github.com/suchithsridhar/suchicodes/web/views/components"
+)
+
+templ ContactShow(data *ContactJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts.FooterJSON) {
+	<!DOCTYPE html>
+	<html lang="en">
+
+		<head>
+			<title>Contact Me | Suchicodes</title>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<link rel="stylesheet" href="/css/home/contact.css" />
+		</head>
+
+		<body>
+
+			@cmpts.NavbarShow(navbarData)
+
+			<section id="contact">
+				<h1>{ data.Title }</h1>
+
+				<div class="parts">
+					<div class="contact-form">
+						<h5>{ data.Form.FormTitle }</h5>
+						<form id="message-form" action="/contact" method="post" enctype="multipart/form-data">
+							<input type="text" name="subject" id="subject-input" placeholder={ data.Form.SubjectPlaceholder } />
+							<textarea name="message" id="message" rows="7" placeholder={ data.Form.MessagePlaceholder }></textarea>
+							<div>
+								{ data.Form.ContactInfoNote }
+							</div>
+							<label for="humantest">
+								<strong>{ data.Form.HumanTestLabel }</strong> { data.Form.HumanTestText }
+							</label>
+							<input type="text" name="humantest" id="humantest" />
+							<button class="btn btn-send" type="submit">{ data.Form.SubmitButtonText }</button>
+						</form>
+					</div>
+
+					<div class="contact-buttons">
+						for _, btn := range data.ContactButtons {
+							<a href={ templ.URL(btn.URL) } class="btn btn-link">
+								<div class="icon">
+									@templ.Raw(btn.Icon)
+								</div>
+								<span>{ btn.Platform }</span>
+							</a>
+						}
+					</div>
+				</div>
+			</section>
+
+			@cmpts.FooterShow(footerData)
+
+		</body>
+	</html>
+}
