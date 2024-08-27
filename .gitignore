@@ -1,1 +1,6 @@
 *\_templ.go
+.env
+logs/*
+instance/*
+!logs/.gitkeep
+!instance/.gitkeep

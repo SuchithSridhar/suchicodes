@@ -7,7 +7,6 @@ import (
 	"github.com/gorilla/sessions"
 	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
-	"github.com/suchithsridhar/suchicodes/configs"
 )
 
 const UserKey = "username"
@@ -49,7 +48,8 @@ func ReadUserSession(c echo.Context) (username string, ok bool) {
 	}
 }
 
-func SetUserSession(username string, c echo.Context) (ok bool) {
+// `secure` is to be set to true when running in the production environment.
+func SetUserSession(username string, secure bool, c echo.Context) (ok bool) {
 	sesh, err := session.Get("session", c)
 	if err != nil {
 		slog.Error("Unable to get session during login.")
@@ -60,8 +60,7 @@ func SetUserSession(username string, c echo.Context) (ok bool) {
 		Path:     "/",
 		MaxAge:   dayInSeconds,
 		HttpOnly: true,
-		// only when env is not dev
-		Secure: configs.Config.ENVIRONMENT != "development",
+		Secure: secure,
 	}
 
 	sesh.Values[UserKey] = username

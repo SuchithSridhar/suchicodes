@@ -1,3 +1,8 @@
+ifneq (,$(wildcard ./.env))
+    include .env
+    export $(shell sed 's/=.*//' .env)
+endif
+
 VIEWS_DIR = ./web/views/
 SCSS_SRC_DIR = ./web/scss/
 CSS_OUTPUT_DIR = ./web/static/css/

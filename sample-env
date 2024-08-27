@@ -1,0 +1,7 @@
+ENVIRONMENT=development
+SECRET_KEY=secret
+DATABASE_URI=instance/site.db
+LOG_FILE=logs/server.log
+LOG_LEVEL=debug
+LOG_ADD_SOURCE=true
+LISTEN_PORT=3000
