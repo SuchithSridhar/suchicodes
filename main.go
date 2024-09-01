@@ -10,6 +10,7 @@ import (
 	"github.com/suchithsridhar/suchicodes/internal/config"
 	"github.com/suchithsridhar/suchicodes/internal/handlers"
 	"github.com/suchithsridhar/suchicodes/internal/logger"
+	"github.com/suchithsridhar/suchicodes/internal/database"
 
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -27,6 +28,8 @@ func main() {
 		logger.Info(fmt.Sprintf("Using SQLite database at %v", cfg.DATABASE_URI))
 	}
 	defer db.Close()
+
+	database.InitializeDatabase(db, logger)
 
 	server := echo.New()
 
