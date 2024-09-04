@@ -5,12 +5,12 @@ import (
 	components "github.com/suchithsridhar/suchicodes/web/views/components"
 )
 
-func handleNavbarApi(ctx echo.Context) error {
+func (h* Handler) handleNavbarApi(ctx echo.Context) error {
 	status, data := serverJSONAsApi[components.NavbarJSON](components.NavbarJsonFile)
 	return ctx.JSON(status, data)
 }
 
-func handleFooterApi(ctx echo.Context) error {
+func (h* Handler) handleFooterApi(ctx echo.Context) error {
 	status, data := serverJSONAsApi[components.FooterJSON](components.FooterJsonFile)
 	return ctx.JSON(status, data)
 }

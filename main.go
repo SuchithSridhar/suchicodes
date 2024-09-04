@@ -1,18 +1,19 @@
 package main
 
 import (
-	"database/sql"
 	"fmt"
 	"os"
 
 	"github.com/labstack/echo/v4"
 	"github.com/suchithsridhar/suchicodes/app"
 	"github.com/suchithsridhar/suchicodes/internal/config"
+	"github.com/suchithsridhar/suchicodes/internal/database"
 	"github.com/suchithsridhar/suchicodes/internal/handlers"
 	"github.com/suchithsridhar/suchicodes/internal/logger"
-	"github.com/suchithsridhar/suchicodes/internal/database"
+	"github.com/suchithsridhar/suchicodes/middleware"
 
-	_ "github.com/mattn/go-sqlite3"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
 )
 
 func main() {
@@ -20,16 +21,18 @@ func main() {
 	logger, logFile := logger.InitLogger(cfg)
 	defer logFile.Close()
 
-	db, err := sql.Open("sqlite3", cfg.DATABASE_URI)
+	db, err := gorm.Open(sqlite.Open(cfg.DATABASE_URI), &gorm.Config{})
 	if err != nil {
 		logger.Error(fmt.Sprintf("Failed to open SQLite database: %v\n", err))
 		os.Exit(1)
 	} else {
 		logger.Info(fmt.Sprintf("Using SQLite database at %v", cfg.DATABASE_URI))
 	}
-	defer db.Close()
 
-	database.InitializeDatabase(db, logger)
+	if err := database.InitializeDatabase(db, logger); err != nil {
+		logger.Error(fmt.Sprintf("Database initialization failed: %v", err))
+		os.Exit(1)
+	}
 
 	server := echo.New()
 
@@ -39,6 +42,8 @@ func main() {
 		Config: cfg,
 		Logger: logger,
 	}
+
+	server.Use(middleware.RealIPMiddleware())
 
 	handlers.SetupHandlers(app)
 

@@ -6,7 +6,7 @@ import (
 	api "github.com/suchithsridhar/suchicodes/web/views/api"
 )
 
-func handleApiHome(ctx echo.Context) error {
+func (h* Handler) handleApiHome(ctx echo.Context) error {
 	apiData, err := loadJSONFromFile[api.ApiHomeJSON](api.ApiHomeJsonFile)
 	if err != nil {
 		// handle error
@@ -25,7 +25,7 @@ func handleApiHome(ctx echo.Context) error {
 	return renderTemplate(ctx, api.ApiShow(apiData, navbarData, footerData))
 }
 
-func handleApiApi(ctx echo.Context) error {
+func (h* Handler) handleApiApi(ctx echo.Context) error {
 	status, data := serverJSONAsApi[api.ApiHomeJSON](api.ApiHomeJsonFile)
 	return ctx.JSON(status, data)
 }

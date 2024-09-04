@@ -1,8 +1,10 @@
 @import url("/css/base.css");
 @import url("/css/components/navbar.css");
 @import url("/css/components/footer.css");
+@import url("/css/components/notification.css");
 section#contact {
   color: var(--c-foreground);
+  overflow-y: hidden;
 }
 section#contact h1 {
   font-size: 2.5em;

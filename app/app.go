@@ -1,7 +1,7 @@
 package app
 
 import (
-	"database/sql"
+	"gorm.io/gorm"
 	"github.com/labstack/echo/v4"
 	"github.com/suchithsridhar/suchicodes/internal/config"
 	"log/slog"
@@ -9,7 +9,7 @@ import (
 
 type App struct {
 	Server *echo.Echo
-	Db     *sql.DB
+	Db     *gorm.DB
 	Config *config.GlobalConfig
 	Logger *slog.Logger
 }

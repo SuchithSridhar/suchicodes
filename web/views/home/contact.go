@@ -20,3 +20,10 @@ type ContactJSON struct {
 		AltText  string `json:"alt_text"`
 	} `json:"contact_buttons"`
 }
+
+type ContactProps struct {
+	Notification      bool
+	NotificationType  string
+	NotificationTitle string
+	NotificationBody  string
+}

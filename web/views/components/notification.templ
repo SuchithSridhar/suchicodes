@@ -1,0 +1,8 @@
+package components
+
+templ Notification(notifyType string, title string, body string) {
+  <div class={ "notification", notifyType }>
+	<h5>{ title }</h5>
+	<p>{ body }</p>
+  </div>
+}

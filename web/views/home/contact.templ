@@ -4,7 +4,7 @@ import (
 	cmpts "github.com/suchithsridhar/suchicodes/web/views/components"
 )
 
-templ ContactShow(data *ContactJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts.FooterJSON) {
+templ ContactShow(props *ContactProps, data *ContactJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts.FooterJSON) {
 	<!DOCTYPE html>
 	<html lang="en">
 
@@ -20,6 +20,10 @@ templ ContactShow(data *ContactJSON, navbarData *cmpts.NavbarJSON, footerData *c
 			@cmpts.NavbarShow(navbarData)
 
 			<section id="contact">
+				if props.Notification {
+					@cmpts.Notification(props.NotificationType,
+						props.NotificationTitle, props.NotificationBody)
+				}
 				<h1>{ data.Title }</h1>
 
 				<div class="parts">
