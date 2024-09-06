@@ -18,13 +18,13 @@ func (h *Handler) handleIndexShow(ctx echo.Context) error {
 	indexData, err := loadJSONFromFile[home.IndexJSON](home.IndexJsonFile)
 
 	if err != nil {
-		// handle error
+		return ctx.String(http.StatusInternalServerError, "Internal server error in handling page load.")
 	}
 
 	navbarData, footerData, err := getNavbarAndFooter()
 
 	if err != nil {
-		// handle error
+		return ctx.String(http.StatusInternalServerError, "Internal server error in handling page load.")
 	}
 
 	return renderTemplate(ctx, home.IndexShow(indexData, navbarData, footerData))
@@ -34,13 +34,13 @@ func (h *Handler) handleAboutShow(ctx echo.Context) error {
 	aboutData, err := loadJSONFromFile[home.AboutJSON](home.AboutJsonFile)
 
 	if err != nil {
-		// handle error
+		return ctx.String(http.StatusInternalServerError, "Internal server error in handling page load.")
 	}
 
 	navbarData, footerData, err := getNavbarAndFooter()
 
 	if err != nil {
-		// handle error
+		return ctx.String(http.StatusInternalServerError, "Internal server error in handling page load.")
 	}
 
 	return renderTemplate(ctx, home.AboutShow(aboutData, navbarData, footerData))
@@ -50,13 +50,13 @@ func (h *Handler) handleContactShow(ctx echo.Context) error {
 	contactData, err := loadJSONFromFile[home.ContactJSON](home.ContactJsonFile)
 
 	if err != nil {
-		// handle error
+		return ctx.String(http.StatusInternalServerError, "Internal server error in handling page load.")
 	}
 
 	navbarData, footerData, err := getNavbarAndFooter()
 
 	if err != nil {
-		// handle error
+		return ctx.String(http.StatusInternalServerError, "Internal server error in handling page load.")
 	}
 
 	contactProps := &home.ContactProps{
@@ -105,13 +105,13 @@ func (h *Handler) handleContactPost(ctx echo.Context) error {
 	contactData, err := loadJSONFromFile[home.ContactJSON](home.ContactJsonFile)
 
 	if err != nil {
-		// handle error
+		return ctx.String(http.StatusInternalServerError, "Internal server error in handling page load.")
 	}
 
 	navbarData, footerData, err := getNavbarAndFooter()
 
 	if err != nil {
-		// handle error
+		return ctx.String(http.StatusInternalServerError, "Internal server error in handling page load.")
 	}
 
 	return renderTemplate(ctx, home.ContactShow(contactProps, contactData, navbarData, footerData))
