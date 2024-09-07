@@ -6,33 +6,35 @@ import (
 	"gorm.io/gorm"
 )
 
-type Admin struct {
-	Id           string `gorm:"primaryKey"`
+type User struct {
+	ID           string `gorm:"primaryKey"`
 	Email        string
+	Username     string
+	Fullname     string
 	PasswordHash string
 	Note         string
 	CreatedAt    int64
 }
 
 type ServerLog struct {
-	Id             string `gorm:"primaryKey"`
+	ID             string `gorm:"primaryKey"`
 	Keyword        string
-	DestinationUrl string
+	DestinationURL string
 }
 
 type Contact struct {
-	Id        string `gorm:"primaryKey"`
+	ID        string `gorm:"primaryKey"`
 	Subject   string
 	Message   string
-	IpAddress string
+	IPAddress string
 	CreatedAt int64
 }
 
 type AccessLog struct {
-	Id             string `gorm:"primaryKey"`
+	ID             string `gorm:"primaryKey"`
 	Timestamp      int64
-	Url            string
-	IpAddress      string
+	URL            string
+	IPAddress      string
 	Referrer       string
 	Platform       string
 	Mobile         string
@@ -40,23 +42,25 @@ type AccessLog struct {
 	UserAgentBrand string
 }
 
-type UrlRedirect struct {
-	Id             string `gorm:"primaryKey"`
+type URLRedirect struct {
+	ID             string `gorm:"primaryKey"`
 	Keyword        string
-	DestinationUrl string
+	DestinationURL string
 }
 
 type Category struct {
-	Id               string `gorm:"primaryKey"`
-	ParentId         string
+	ID               string `gorm:"primaryKey"`
+	ParentID         string
 	Name             string
 	RelativePosition float64
 }
 
 type Note struct {
-	Id         string `gorm:"primaryKey"`
-	CategoryId string
-	Category   Category `gorm:"foreignKey:CategoryId"`
+	ID         string `gorm:"primaryKey"`
+	CategoryID string
+	Category   Category `gorm:"foreignKey:CategoryID;references:ID"`
+	AuthorID   string
+	Author     User `gorm:"foreignKey:AuthorID;references:ID"`
 	CreatedAt  int64
 	UpdatedAt  int64
 	Title      string
@@ -68,8 +72,8 @@ type Note struct {
 
 func InitializeDatabase(db *gorm.DB, logger *slog.Logger) error {
 	err := db.AutoMigrate(
-		&Admin{}, &ServerLog{}, &Contact{}, &AccessLog{},
-		&UrlRedirect{}, &Category{}, &Note{},
+		&User{}, &ServerLog{}, &Contact{}, &AccessLog{},
+		&URLRedirect{}, &Category{}, &Note{},
 	)
 
 	if err != nil {

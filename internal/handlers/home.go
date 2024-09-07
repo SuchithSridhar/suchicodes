@@ -59,8 +59,7 @@ func (h *Handler) handleContactShow(ctx echo.Context) error {
 		return ctx.String(http.StatusInternalServerError, "Internal server error in handling page load.")
 	}
 
-	contactProps := &home.ContactProps{
-	}
+	contactProps := &home.ContactProps{}
 
 	return renderTemplate(ctx, home.ContactShow(contactProps, contactData, navbarData, footerData))
 }
@@ -73,18 +72,17 @@ func (h *Handler) handleContactPost(ctx echo.Context) error {
 	humanTest := ctx.FormValue("humantest")
 	ipAddress := ctx.Get("clientIpAddress").(string)
 
-	contactProps := &home.ContactProps{
-	}
+	contactProps := &home.ContactProps{}
 
 	if strings.ToLower(strings.TrimSpace(humanTest)) != HUMAN_TEST_PHRASE {
 		return ctx.String(http.StatusForbidden, "You were identified as a bot. Please fill out the human test field.")
 	}
 
-	newContactMessage := database.Contact {
-		Id: id,
-		Subject: subject,
-		Message: message,
-		IpAddress: ipAddress,
+	newContactMessage := database.Contact{
+		ID:        id,
+		Subject:   subject,
+		Message:   message,
+		IPAddress: ipAddress,
 		CreatedAt: timestamp,
 	}
 
