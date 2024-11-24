@@ -16,12 +16,6 @@ type User struct {
 	CreatedAt    int64
 }
 
-type ServerLog struct {
-	ID             string `gorm:"primaryKey"`
-	Keyword        string
-	DestinationURL string
-}
-
 type Contact struct {
 	ID        string `gorm:"primaryKey"`
 	Subject   string
@@ -72,7 +66,7 @@ type Note struct {
 
 func InitializeDatabase(db *gorm.DB, logger *slog.Logger) error {
 	err := db.AutoMigrate(
-		&User{}, &ServerLog{}, &Contact{}, &AccessLog{},
+		&User{}, &Contact{}, &AccessLog{},
 		&URLRedirect{}, &Category{}, &Note{},
 	)
 

@@ -21,6 +21,10 @@
             "desc":  "The about page available at /about"
         },
         {
+            "endpoint": "/api/pages/notes/index",
+            "desc":  "The index page for the notes section of the website."
+        },
+        {
             "endpoint": "/api/components/navbar",
             "desc":  "API endpoint for navbar"
         },

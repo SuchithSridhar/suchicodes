@@ -23,6 +23,9 @@ func SetupHandlers(app *app.App) {
 	routeWithoutSlash(server, "/about", "get", handler.handleAboutShow)
 	routeWithoutSlash(server, "/contact", "get", handler.handleContactShow)
 
+	// notes pages
+	routeWithoutSlash(server, "/notes", "get", handler.handleNotesIndexShow)
+
 	// post requests pages
 	routeWithoutSlash(server, "/contact", "post", handler.handleContactPost)
 
@@ -32,6 +35,9 @@ func SetupHandlers(app *app.App) {
 	routeWithoutSlash(server, "/api/pages/about", "get", handler.handleAboutApi)
 	routeWithoutSlash(server, "/api/pages/contact", "get", handler.handleContactApi)
 	routeWithoutSlash(server, "/api/pages/api", "get", handler.handleApiApi)
+
+	// notes api endpoints
+	routeWithoutSlash(server, "/api/pages/notes/index", "get", handler.handleNotesIndexApi)
 
 	// components
 	routeWithoutSlash(server, "/api/components/navbar", "get", handler.handleNavbarApi)

@@ -1,0 +1,29 @@
+package notes
+
+import (
+	cmpts "github.com/suchithsridhar/suchicodes/web/views/components"
+)
+
+templ IndexShow(data *IndexJSON, navbarData *cmpts.NavbarJSON, footerData *cmpts.FooterJSON) {
+	<!DOCTYPE html>
+	<html lang="en">
+
+		<head>
+			<title>Notes | Suchicodes</title>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<link rel="stylesheet" href="/css/notes/index.css" />
+		</head>
+
+		<body>
+
+			@cmpts.NavbarShow(navbarData)
+
+			<section id="notes">
+			</section>
+
+			@cmpts.FooterShow(footerData)
+
+		</body>
+	</html>
+}
